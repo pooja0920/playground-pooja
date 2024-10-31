@@ -69,10 +69,6 @@ while running:
     pygame.display.update()
 
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-
         if event.type == pygame.MOUSEBUTTONDOWN:
             x, y = pygame.mouse.get_pos()
             row, col = y // 100, x // 100
