@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-# initialize pygame
+# initialize pygame module
 pygame.init()
 
 # top display of the grid board
