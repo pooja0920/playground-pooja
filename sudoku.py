@@ -24,6 +24,13 @@ grid = [
     [1, 0, 0]
 ]
 
+# solution grid to check for correct completion
+solution_grid = [
+    [3, 2, 1],
+    [1, 3, 2],
+    [1, 3, 2]
+]
+
 # function to draw the grid
 def draw_grid():
     screen.fill(WHITE)
@@ -44,6 +51,17 @@ def draw_grid():
 def insert_number(row, col, num):
     if grid[row][col] == 0:  # Allow insertion only if the cell is empty
         grid[row][col] = num
+        
+# function to check if the grid matches the solution
+def check_solution():
+    for row in range(3):
+        for col in range(3):
+            if grid[row][col] != solution_grid[row][col]:
+                return False
+    return True
+
+# creating a flag to indicate if the puzzle is solved
+puzzle_solved = False
 
 # game loop
 running = True
@@ -68,3 +86,7 @@ while running:
                 insert_number(row, col, 2)
             if event.key == pygame.K_3:
                 insert_number(row, col, 3)
+
+            if not puzzle_solved and check_solution():
+            print("Congratulations! The puzzle is correct.")
+            puzzle_solved = True  # Set to True to prevent further checks
