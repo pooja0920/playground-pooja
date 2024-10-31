@@ -37,7 +37,7 @@ def draw_grid():
     for row in range(3):
         for col in range(3):
             if grid[row][col] != 0:
-                text = font.render(str(grid[row][col]), True, BLACK)
+                text = font.render(str(grid[row][col]), True, BLACK)  # rendering the number as text needed in pygame
                 screen.blit(text, (col, row))
 
 # function to insert numbers into the grid
