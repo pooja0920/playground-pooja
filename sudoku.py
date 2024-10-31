@@ -64,7 +64,6 @@ def check_solution():
 puzzle_solved = False
 
 # game loop
-running = True
 while running:
     draw_grid()
     pygame.display.update()
