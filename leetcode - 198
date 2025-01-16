@@ -1,0 +1,21 @@
+class Solution:
+    def rob(self, house: List[int]) -> int:
+        #if we have 0 houses in the locality
+        if not house:
+            return 0
+        n = len(house)
+        #when we have only one house
+        if n == 1:
+            return house[0]
+       
+       #when we have moore than 1 house, we are creating an array of that length
+        dp = [0] * n
+        #Base cases
+        dp[0] = house[0]
+        dp[1] = max(house[0], house[1])
+        #iteration since when we have more than 2 houses we will have more choices
+        for i in range(2, n):
+          
+            dp[i] = max(house[i] + dp[i-2], dp[i-1])
+
+        return dp[-1]
